@@ -27,32 +27,45 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
       <div className="flex flex-col justify-center items-center w-11/12 sm:w-8/12">
         <h1 className="text-xl sm:text-2xl text-gray-600">{`${fiexdSentence.date}${fanzaData.title}`}</h1>
         {appealFlag > 4.0 && (
-          <a
-            className="mt-8 hover:opacity-80 cursor-pointer"
-            href={fiexdSentence.affiliateLink}
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-          >
-            <div className="flex bg-yellow-100 rounded">
-              <div className="flex flex-col justify-center items-center py-6 px-6 my-2 w-16 border-r border-yellow-500">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 text-yellow-500"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                  />
-                </svg>
+          <>
+            <a
+              className="mt-8 hover:opacity-80 cursor-pointer"
+              href={fiexdSentence.affiliateLink}
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <div className="flex bg-yellow-100 rounded">
+                <div className="flex flex-col justify-center items-center py-6 px-6 my-2 w-16 border-r border-yellow-500">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 text-yellow-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                </div>
+                <div className="py-6 px-6 my-2">{fiexdSentence.comment}</div>
               </div>
-              <div className="py-6 px-6 my-2">{fiexdSentence.comment}</div>
+            </a>
+            <div className="flex flex-col justify-center items-center py-4 cursor-pointer">
+              <span className="py-1 text-sm">{fiexdSentence.microCopy}</span>
+              <a
+                className="py-3 px-8 text-xl text-white bg-pink-500 hover:bg-pink-400 rounded transition"
+                href={fiexdSentence.affiliateLink}
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+              >
+                FANZA見放題chで見る
+              </a>
             </div>
-          </a>
+          </>
         )}
         <div className="py-8">
           <a
