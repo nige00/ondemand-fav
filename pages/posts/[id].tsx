@@ -184,7 +184,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(params: { id: string }) {
+export interface ParamsObj {
+  id: string;
+}
+
+export async function getStaticProps({ params }: { params: ParamsObj }) {
   const fanzaData = fanzaDatas.find(function (fanzaData) {
     return fanzaData.forUrlNumber === params.id;
   });
