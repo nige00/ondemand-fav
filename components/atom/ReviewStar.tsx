@@ -1,11 +1,12 @@
-const ReviewStar = ({ star }) => {
+const ReviewStar = ({ star }: { star: string }) => {
   if (star == "----") {
     return <span className="pr-1">未評価</span>;
   }
 
   star = star.replace("点", "");
+  const starNumber = Number(star);
   const items = [];
-  for (let i = 0.5; i < star; i += 1) {
+  for (let i = 0.5; i < starNumber; i += 1) {
     items.push(
       <span>
         <svg
@@ -21,8 +22,8 @@ const ReviewStar = ({ star }) => {
     );
   }
 
-  if (star < 5) {
-    const x = 5 - star;
+  if (starNumber < 5) {
+    const x = 5 - starNumber;
     for (let i = 0.49; i < x; i++) {
       items.push(
         <svg
@@ -50,6 +51,7 @@ const ReviewStar = ({ star }) => {
           {item}
         </span>
       ))}
+      <span className="pl-2 text-base">{starNumber}</span>
     </span>
   );
 };

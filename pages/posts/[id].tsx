@@ -17,7 +17,13 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
   const appealFlag = fanzaData.aveReviewPoint.replace("点", "");
 
   return (
-    <Layout title={`${fiexdSentence.date}${fanzaData.title}`}>
+    <Layout
+      title={`${fiexdSentence.date}${fanzaData.title}`}
+      description={`${fiexdSentence.fanzaChLite}で${fanzaData.title}は配信されてる？配信状況を毎月チェック！あの人気AVが見放題、見逃しちゃいけません！`}
+      keyword={fiexdSentence.keywords}
+      url={`${fiexdSentence.url}/posts/${fanzaData.forUrlNumber}`}
+      type="article"
+    >
       <div className="flex flex-col justify-center items-center sm:w-8/12 w-11/12">
         <h1 className="sm:text-2xl text-xl text-gray-600">{`${fiexdSentence.date}${fanzaData.title}`}</h1>
         {appealFlag > 4.0 && (
@@ -49,13 +55,20 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
           </a>
         )}
         <div className="py-8">
-          <Image
-            src={`/package_images/${fanzaData.imgName}`}
-            alt={fanzaData.title}
-            width={800}
-            height={538}
-            objectFit="contain"
-          />
+          <a
+            className="cursor hover:opacity-80"
+            href={fiexdSentence.affiliateLink}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <Image
+              src={`/package_images/${fanzaData.imgName}`}
+              alt={fanzaData.title}
+              width={800}
+              height={538}
+              objectFit="contain"
+            />
+          </a>
         </div>
         <div className="sm:flex sm:flex-1">
           <div className="sm:w-1/2 sm:p-4">

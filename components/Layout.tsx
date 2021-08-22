@@ -1,17 +1,46 @@
 import type { NextPage } from "next";
+import { fiexdSentence } from "../json/fixedSentence";
 import Head from "next/head";
 import Link from "next/link";
 
 type Props = {
   children: React.ReactNode;
   title: string;
+  description: string;
+  keyword: string;
+  url: string;
+  type: string;
 };
 
-const Layout: NextPage<Props> = ({ children, title = "Dafault Title" }) => {
+const Layout: NextPage<Props> = ({
+  children,
+  title = "Dafault Title",
+  description,
+  keyword,
+  url,
+  type,
+}) => {
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta name="keywords" content={keyword} />
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={url} />
+        <meta
+          property="og:site_name"
+          content="FANZAでAVが見放題！｜見放題chライト対象のAV作品まとめ"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta
+          name="google-site-verification"
+          content="7_ZHDHb9q5QDql9_JbvC0SIN8Ti_Eepkv-l4hBr03Eg"
+        />
+        <link rel="canonical" href={url} />
       </Head>
       <header className="w-screen">
         <nav className="bg-pink-200">
@@ -24,58 +53,21 @@ const Layout: NextPage<Props> = ({ children, title = "Dafault Title" }) => {
                   </a>
                 </Link>
               </div>
-
-              {/* <!-- Mobile menu button --> */}
-              {/* <div className="flex md:hidden">
-                <button
-                  type="button"
-                  className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
-                  aria-label="toggle menu"
-                >
-                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
-                    <path
-                      fillRule="evenodd"
-                      d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                    ></path>
-                  </svg>
-                </button>
-              </div> */}
             </div>
-
-            {/* <!-- Mobile Menu open: "block", Menu closed: "hidden" --> */}
-            {/* <div className="w-full md:flex md:items-center md:justify-between">
-              <div className="flex flex-col px-2 py-3 -mx-4 md:flex-row md:mx-0 md:py-0">
-                <a
-                  href="#"
-                  className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-                >
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="px-2 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 transform rounded dark:text-gray-200 hover:bg-gray-900 hover:text-gray-100 md:mx-2"
-                >
-                  Contact
-                </a>
-              </div>
-            </div> */}
           </div>
         </nav>
       </header>
       <main className="w-screen min-h-screen flex justify-center flex-col items-center my-4 text-gray-600">
         {children}
       </main>
-      <footer className="flex flex-col items-center justify-center w-screen px-6 py-4 bg-white border-t dark:bg-gray-800 sm:flex-row">
+      <footer className="flex items-center justify-center w-screen px-6 py-4 bg-white border-t flex-row flex-wrap">
         <Link href="/" passHref>
           <a className="font-mono text-2xl text-gray-600 lg:text-2xl hover:opacity-90">
             FanzaのAVが見放題
           </a>
+        </Link>
+        <Link href="/allpages" passHref>
+          <a className="px-4 font-sans text-gray-600">全てのページ</a>
         </Link>
       </footer>
     </>
