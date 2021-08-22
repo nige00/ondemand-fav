@@ -13,13 +13,13 @@ const Layout: NextPage<Props> = ({ children, title = "Dafault Title" }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <header>
+      <header className="w-screen">
         <nav className="bg-pink-200">
           <div className="container px-6 py-3 mx-auto md:flex">
             <div className="flex items-center justify-between">
               <div>
                 <Link href="/" passHref>
-                  <a className="font-mono text-2xl text-gray-800 lg:text-2xl hover:opacity-90">
+                  <a className="font-mono text-2xl text-gray-600 lg:text-2xl hover:opacity-90">
                     FanzaのAVが見放題
                   </a>
                 </Link>
@@ -68,8 +68,10 @@ const Layout: NextPage<Props> = ({ children, title = "Dafault Title" }) => {
           </div>
         </nav>
       </header>
-      <main className="min-h-screen">{children}</main>
-      <footer className="flex flex-col items-center justify-center px-6 py-4 bg-white border-t dark:bg-gray-800 sm:flex-row">
+      <main className="w-screen min-h-screen flex justify-center flex-col items-center my-4 text-gray-600">
+        {children}
+      </main>
+      <footer className="flex flex-col items-center justify-center w-screen px-6 py-4 bg-white border-t dark:bg-gray-800 sm:flex-row">
         <Link href="/" passHref>
           <a className="font-mono text-2xl text-gray-600 lg:text-2xl hover:opacity-90">
             FanzaのAVが見放題
