@@ -23,5 +23,5 @@ export const fiexdSentence = {
   microCopy: "＼今なら30日間無料お試しあり！／",
   fanzaChLite: "FANZA見放題chライト",
   keywords: "見放題,AV,FANZA,見放題chライト,実質無料,お得,30日間無料,DMM",
-  url: "https://www.ondemand-fav.vercel.app",
+  url: "https://ondemand-fav.vercel.app",
 };
