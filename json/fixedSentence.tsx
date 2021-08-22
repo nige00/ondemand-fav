@@ -22,6 +22,6 @@ export const fiexdSentence = {
     "https://www.dmm.co.jp/pr/digital/181/?utm_campaign=admg_12288_16074_602831_602931&utm_content=prime&utm_source=linka&utm_medium=asp&sns_adid=xuidx7b6c770c1cxae1",
   microCopy: "＼今なら30日間無料お試しあり！／",
   fanzaChLite: "FANZA見放題chライト",
-  keywords: "見放題,AV,FANZA,見放題chライト,実質無料,お得,30日間無料,DMM",
+  keywords: "見放題,AV,FANZA,見放題chライト,実質無料,お得,30日間無料,DMM,VOD",
   url: "https://ondemand-fav.vercel.app",
 };
