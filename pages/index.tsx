@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import { fanzaDatas } from "../json/fanzaDatas";
-import { fiexdSentence } from "../json/fixedSentence";
-import Layout from "../components/Layout";
 import Image from "next/image";
 import Link from "next/link";
+import Layout from "../components/Layout";
 import ReviewStar from "../components/atom/ReviewStar";
+import { fanzaDatas } from "../json/fanzaDatas";
+import { fiexdSentence } from "../json/fixedSentence";
 
 const Home: NextPage = () => {
   const popularAv = fanzaDatas.filter((fanzaData) => {
@@ -34,13 +34,13 @@ const Home: NextPage = () => {
       url={`${fiexdSentence.url}/`}
       type="website"
     >
-      <h1 className="sm:text-2xl text-xl text-gray-600">
+      <h1 className="text-xl sm:text-2xl text-gray-600">
         FANZAでAVが見放題！｜見放題chライト対象のAV作品まとめ
       </h1>
-      <div className="flex flex-col items-center justify-center cursor-pointer py-4">
-        <span className="text-sm py-1">＼FANZA見放題chライトとは？／</span>
+      <div className="flex flex-col justify-center items-center py-4 cursor-pointer">
+        <span className="py-1 text-sm">＼FANZA見放題chライトとは？／</span>
         <a
-          className="bg-pink-500 text-xl text-white px-8 py-3 rounded hover:bg-pink-400 transition"
+          className="py-3 px-8 text-xl text-white bg-pink-500 hover:bg-pink-400 rounded transition"
           href={fiexdSentence.affiliateLink}
           rel="nofollow noopener noreferrer"
           target="_blank"
@@ -50,12 +50,12 @@ const Home: NextPage = () => {
       </div>
       <div className="my-16 text-lg">{`現在の見放題対象作品数：${fanzaDatas.length}本`}</div>
       <h2 className="text-3xl">今見れる！見放題chライトで人気の作品集</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-11/12 pt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-6 w-11/12">
         {contents.map((content, index) => {
           return (
             <div key={content.forUrlNumber}>
-              <div className="flex justify-center items-center flex-col">
-                <span className="text-xl rounded bg-pink-400 inline-block px-8 py-2 text-white">{`${
+              <div className="flex flex-col justify-center items-center">
+                <span className="inline-block py-2 px-8 text-xl text-white bg-pink-400 rounded">{`${
                   index + 1
                 }位`}</span>
               </div>
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
               </div>
               <Link href={`/posts/${content.forUrlNumber}`} passHref>
                 <a>
-                  <h3 className="truncate py-1">{content.title}</h3>
+                  <h3 className="py-1 truncate">{content.title}</h3>
                 </a>
               </Link>
               <ReviewStar star={content.aveReviewPoint} />
@@ -82,10 +82,10 @@ const Home: NextPage = () => {
           );
         })}
       </div>
-      <div className="flex flex-col items-center justify-center cursor-pointer py-4">
-        <span className="text-sm py-1">{fiexdSentence.microCopy}</span>
+      <div className="flex flex-col justify-center items-center py-4 cursor-pointer">
+        <span className="py-1 text-sm">{fiexdSentence.microCopy}</span>
         <a
-          className="bg-pink-500 text-xl text-white px-8 py-3 rounded hover:bg-pink-400 transition"
+          className="py-3 px-8 text-xl text-white bg-pink-500 hover:bg-pink-400 rounded transition"
           href={fiexdSentence.affiliateLink}
           rel="nofollow noopener noreferrer"
           target="_blank"

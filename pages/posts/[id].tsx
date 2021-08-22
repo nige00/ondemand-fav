@@ -1,9 +1,9 @@
+import type { NextPage } from "next";
+import Image from "next/image";
+import Layout from "../../components/Layout";
+import ReviewStar from "../../components/atom/ReviewStar";
 import { fanzaDatas } from "../../json/fanzaDatas";
 import { fiexdSentence } from "../../json/fixedSentence";
-import type { NextPage } from "next";
-import Layout from "../../components/Layout";
-import Image from "next/image";
-import ReviewStar from "../../components/atom/ReviewStar";
 
 type Props = {
   fanzaData: any;
@@ -24,20 +24,20 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
       url={`${fiexdSentence.url}/posts/${fanzaData.forUrlNumber}`}
       type="article"
     >
-      <div className="flex flex-col justify-center items-center sm:w-8/12 w-11/12">
-        <h1 className="sm:text-2xl text-xl text-gray-600">{`${fiexdSentence.date}${fanzaData.title}`}</h1>
+      <div className="flex flex-col justify-center items-center w-11/12 sm:w-8/12">
+        <h1 className="text-xl sm:text-2xl text-gray-600">{`${fiexdSentence.date}${fanzaData.title}`}</h1>
         {appealFlag > 4.0 && (
           <a
-            className="cursor hover:opacity-80"
+            className="hover:opacity-80 cursor-pointer"
             href={fiexdSentence.affiliateLink}
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
-            <div className="flex bg-yellow-100 rounded mt-8">
-              <div className="flex justify-center items-center flex-col w-16 border-r border-yellow-500 px-6 py-6 my-2">
+            <div className="flex mt-8 bg-yellow-100 rounded">
+              <div className="flex flex-col justify-center items-center py-6 px-6 my-2 w-16 border-r border-yellow-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-yellow-500"
+                  className="w-6 h-6 text-yellow-500"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -50,13 +50,13 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
                   />
                 </svg>
               </div>
-              <div className="px-6 py-6 my-2">{fiexdSentence.comment}</div>
+              <div className="py-6 px-6 my-2">{fiexdSentence.comment}</div>
             </div>
           </a>
         )}
         <div className="py-8">
           <a
-            className="cursor hover:opacity-80"
+            className="hover:opacity-80 cursor-pointer"
             href={fiexdSentence.affiliateLink}
             target="_blank"
             rel="nofollow noopener noreferrer"
@@ -71,29 +71,29 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
           </a>
         </div>
         <div className="sm:flex sm:flex-1">
-          <div className="sm:w-1/2 sm:p-4">
+          <div className="sm:p-4 sm:w-1/2">
             <h2 className="text-xl">作品内容</h2>
-            <p className="leading-relaxed py-6">{fanzaData.desc}</p>
+            <p className="py-6 leading-relaxed">{fanzaData.desc}</p>
           </div>
-          <div className="sm:w-1/2 sm:p-4">
+          <div className="sm:p-4 sm:w-1/2">
             <h2 className="text-xl">FANZA見放題chライトの配信データ</h2>
             <div className="grid grid-cols-2 gap-y-2 py-4">
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>評価</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <ReviewStar star={fanzaData.aveReviewPoint} />
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>視聴デバイス</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span className="pr-1">{fanzaData.viewDevice}</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>出演女優</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 {fanzaData.actress &&
                   fanzaData.actress.map((data: string) => (
                     <span className="pr-1" key={data}>
@@ -101,10 +101,10 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
                     </span>
                   ))}
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>監督</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 {fanzaData.director &&
                   fanzaData.director.map((data: string) => (
                     <span className="pr-1" key={data}>
@@ -112,11 +112,10 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
                     </span>
                   ))}
               </div>
-
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>シリーズ</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 {fanzaData.series &&
                   fanzaData.series.map((data: string) => (
                     <span className="pr-1" key={data}>
@@ -125,10 +124,10 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
                   ))}
               </div>
 
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>メーカー</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 {fanzaData.maker &&
                   fanzaData.maker.map((data: string) => (
                     <span className="pr-1" key={data}>
@@ -136,10 +135,10 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
                     </span>
                   ))}
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>レーベル</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 {fanzaData.label &&
                   fanzaData.label.map((data: string) => (
                     <span className="pr-1" key={data}>
@@ -147,10 +146,10 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
                     </span>
                   ))}
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 <span>ジャンル</span>
               </div>
-              <div className="border-b py-2 border-gray-300">
+              <div className="py-2 border-b border-gray-300">
                 {fanzaData.genre &&
                   fanzaData.genre.map((data: string) => (
                     <span className="pr-1" key={data}>
@@ -161,13 +160,13 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
             </div>
           </div>
         </div>
-        <div className="sm:px-4 py-4">
+        <div className="py-4 sm:px-4">
           <p>{fiexdSentence.caution}</p>
         </div>
-        <div className="flex flex-col items-center justify-center cursor-pointer py-4">
-          <span className="text-sm py-1">{fiexdSentence.microCopy}</span>
+        <div className="flex flex-col justify-center items-center py-4 cursor-pointer">
+          <span className="py-1 text-sm">{fiexdSentence.microCopy}</span>
           <a
-            className="bg-pink-500 text-xl text-white px-8 py-3 rounded hover:bg-pink-400 transition"
+            className="py-3 px-8 text-xl text-white bg-pink-500 hover:bg-pink-400 rounded transition"
             href={fiexdSentence.affiliateLink}
             rel="nofollow noopener noreferrer"
             target="_blank"
