@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://www.ondemand-fav.vercel.app",
+  siteUrl: "https://ondemand-fav.vercel.app",
   generateRobotsTxt: true,
   sitemapSize: 7000,
 };

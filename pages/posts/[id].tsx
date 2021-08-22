@@ -28,12 +28,12 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
         <h1 className="text-xl sm:text-2xl text-gray-600">{`${fiexdSentence.date}${fanzaData.title}`}</h1>
         {appealFlag > 4.0 && (
           <a
-            className="hover:opacity-80 cursor-pointer"
+            className="mt-8 hover:opacity-80 cursor-pointer"
             href={fiexdSentence.affiliateLink}
             target="_blank"
             rel="nofollow noopener noreferrer"
           >
-            <div className="flex mt-8 bg-yellow-100 rounded">
+            <div className="flex bg-yellow-100 rounded">
               <div className="flex flex-col justify-center items-center py-6 px-6 my-2 w-16 border-r border-yellow-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
