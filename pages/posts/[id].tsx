@@ -182,7 +182,7 @@ const Post: NextPage<Props> = ({ fanzaData }) => {
 
 export default Post;
 
-export async function getServerSidePaths() {
+export async function getStaticPaths() {
   const paths = fanzaDatas.map((fanzaData) => {
     return {
       params: {
@@ -201,7 +201,7 @@ export interface ParamsObj {
   id: string;
 }
 
-export async function getServerSideProps({ params }: { params: ParamsObj }) {
+export async function getStaticProps({ params }: { params: ParamsObj }) {
   const fanzaData = fanzaDatas.find(function (fanzaData) {
     return fanzaData.forUrlNumber === params.id;
   });

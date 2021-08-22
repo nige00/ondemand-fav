@@ -72,7 +72,11 @@ const Home: NextPage = () => {
                   </a>
                 </Link>
               </div>
-              <h3 className="truncate py-1">{content.title}</h3>
+              <Link href={`/posts/${content.forUrlNumber}`} passHref>
+                <a>
+                  <h3 className="truncate py-1">{content.title}</h3>
+                </a>
+              </Link>
               <ReviewStar star={content.aveReviewPoint} />
             </div>
           );

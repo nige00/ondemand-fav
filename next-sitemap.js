@@ -1,7 +1,5 @@
-const siteUrl = "https://www.ondemand-fav.vercel.app";
-
 module.exports = {
-  siteUrl,
+  siteUrl: "https://www.ondemand-fav.vercel.app",
   generateRobotsTxt: true,
   sitemapSize: 7000,
 };

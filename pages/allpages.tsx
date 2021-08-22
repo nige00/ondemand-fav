@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import { fanzaDatas } from "../json/fanzaDatas";
-import { fiexdSentence } from "../json/fixedSentence";
-import Layout from "../components/Layout";
 import Image from "next/image";
 import Link from "next/link";
+import Layout from "../components/Layout";
 import ReviewStar from "../components/atom/ReviewStar";
+import { fanzaDatas } from "../json/fanzaDatas";
+import { fiexdSentence } from "../json/fixedSentence";
 
 const Allpages: NextPage = () => {
   return (
@@ -15,12 +15,12 @@ const Allpages: NextPage = () => {
       url={`${fiexdSentence.url}/allpages`}
       type="article"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-11/12 pt-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-6 w-11/12">
         {fanzaDatas.map((content, index) => {
           return (
             <div key={content.forUrlNumber}>
-              <div className="flex justify-center items-center flex-col">
-                <span className="text-xl rounded bg-pink-400 inline-block px-8 py-2 text-white">{`${
+              <div className="flex flex-col justify-center items-center">
+                <span className="inline-block py-2 px-8 text-xl text-white bg-pink-400 rounded">{`${
                   index + 1
                 } / ${fanzaDatas.length}`}</span>
               </div>
@@ -37,7 +37,7 @@ const Allpages: NextPage = () => {
                   </a>
                 </Link>
               </div>
-              <h3 className="truncate py-1">{content.title}</h3>
+              <h3 className="py-1 truncate">{content.title}</h3>
               <ReviewStar star={content.aveReviewPoint} />
             </div>
           );
