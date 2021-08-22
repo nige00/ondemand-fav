@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.ondemand-fav.vercel.app
+Host: https://ondemand-fav.vercel.app
 
 # Sitemaps
-Sitemap: https://www.ondemand-fav.vercel.app/sitemap.xml
+Sitemap: https://ondemand-fav.vercel.app/sitemap.xml
