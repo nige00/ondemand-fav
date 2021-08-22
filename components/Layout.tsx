@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { fiexdSentence } from "../json/fixedSentence";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -44,11 +43,11 @@ const Layout: NextPage<Props> = ({
       </Head>
       <header className="w-screen">
         <nav className="bg-pink-200">
-          <div className="container px-6 py-3 mx-auto md:flex">
-            <div className="flex items-center justify-between">
+          <div className="container md:flex py-3 px-6 mx-auto">
+            <div className="flex justify-between items-center">
               <div>
                 <Link href="/" passHref>
-                  <a className="font-mono text-2xl text-gray-600 lg:text-2xl hover:opacity-90">
+                  <a className="font-mono text-2xl lg:text-2xl text-gray-600 hover:opacity-90">
                     FanzaのAVが見放題
                   </a>
                 </Link>
@@ -57,12 +56,12 @@ const Layout: NextPage<Props> = ({
           </div>
         </nav>
       </header>
-      <main className="w-screen min-h-screen flex justify-center flex-col items-center my-4 text-gray-600">
+      <main className="flex flex-col justify-center items-center my-4 w-screen min-h-screen text-gray-600">
         {children}
       </main>
-      <footer className="flex items-center justify-center w-screen px-6 py-4 bg-white border-t flex-row flex-wrap">
+      <footer className="flex flex-row flex-wrap justify-center items-center py-4 px-6 w-screen bg-white border-t">
         <Link href="/" passHref>
-          <a className="font-mono text-2xl text-gray-600 lg:text-2xl hover:opacity-90">
+          <a className="font-mono text-2xl lg:text-2xl text-gray-600 hover:opacity-90">
             FanzaのAVが見放題
           </a>
         </Link>
